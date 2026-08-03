@@ -1,0 +1,2510 @@
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+  }
+
+  /* =====================================================
+     RESETARE SQUARESPACE DOAR PENTRU ACEASTĂ PAGINĂ
+  ===================================================== */
+
+  .page-section:has(#vi-services-complete) {
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .page-section:has(#vi-services-complete) .content-wrapper,
+  .page-section:has(#vi-services-complete) .sqs-block-code,
+  .page-section:has(#vi-services-complete) .sqs-block-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .page-section:has(#vi-services-complete) .fluid-engine {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .page-section:has(#vi-services-complete)
+    .fe-block:has(#vi-services-complete) {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  /* =====================================================
+     VARIABILE ȘI SETĂRI GENERALE
+  ===================================================== */
+
+  #vi-services-complete,
+  #vi-services-complete * {
+    box-sizing: border-box;
+  }
+
+  #vi-services-complete {
+    --vi-yellow: #f2a00d;
+    --vi-yellow-hover: #ffbd38;
+    --vi-yellow-soft: #fff8e6;
+    --vi-yellow-light: #fff1c9;
+
+    --vi-red: #b51f24;
+    --vi-red-dark: #94191e;
+    --vi-red-soft: #fff0f0;
+
+    --vi-black: #111111;
+    --vi-dark: #262626;
+    --vi-gray: #686868;
+    --vi-gray-light: #8a8a8a;
+
+    --vi-white: #ffffff;
+    --vi-cream: #f8f6f1;
+    --vi-line: #e8e2d7;
+    --vi-green: #29a85a;
+
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+    overflow-y: visible;
+    background: var(--vi-white);
+    color: var(--vi-black);
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Arial,
+      sans-serif;
+  }
+
+  #vi-services-complete a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #vi-services-complete img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .vi3-shell {
+    width: min(1460px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  #vi-services-complete a:focus-visible {
+    outline: 3px solid var(--vi-red);
+    outline-offset: 4px;
+  }
+
+  .vi3-skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 9999;
+    padding: 12px 17px;
+    border-radius: 999px;
+    background: var(--vi-black);
+    color: var(--vi-white) !important;
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .vi3-skip-link:focus {
+    top: 16px;
+  }
+
+  /* =====================================================
+     BUTOANE GENERALE
+  ===================================================== */
+
+  .vi3-button {
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 21px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 850;
+    line-height: 1;
+    text-align: center;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .vi3-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .vi3-button-yellow {
+    background: var(--vi-yellow);
+    color: var(--vi-black) !important;
+    box-shadow: 0 14px 30px rgba(242, 160, 13, 0.2);
+  }
+
+  .vi3-button-yellow:hover {
+    background: var(--vi-yellow-hover);
+    box-shadow: 0 18px 38px rgba(242, 160, 13, 0.28);
+  }
+
+  .vi3-button-red {
+    background: var(--vi-red);
+    color: var(--vi-white) !important;
+    box-shadow: 0 14px 30px rgba(181, 31, 36, 0.18);
+  }
+
+  .vi3-button-red:hover {
+    background: var(--vi-red-dark);
+  }
+
+  .vi3-button-outline {
+    border-color: #d9d2c7;
+    background: var(--vi-white);
+    color: var(--vi-black) !important;
+  }
+
+  .vi3-button-outline:hover {
+    border-color: var(--vi-yellow);
+    background: var(--vi-yellow-soft);
+  }
+
+  /* =====================================================
+     BARĂ ACASĂ / SERVICII
+  ===================================================== */
+
+  .vi3-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    border-bottom: 1px solid var(--vi-line);
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 8px 25px rgba(17, 17, 17, 0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .vi3-topbar::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--vi-yellow) 0%,
+      var(--vi-yellow) 58%,
+      var(--vi-red) 58%,
+      var(--vi-red) 100%
+    );
+  }
+
+  .vi3-topbar-inner {
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding-top: 4px;
+  }
+
+  .vi3-topbar-left {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  .vi3-topbar-logo {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    border-radius: 13px;
+    background: var(--vi-black);
+    color: var(--vi-yellow) !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(17, 17, 17, 0.15);
+  }
+
+  .vi3-topbar-path {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--vi-gray);
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .vi3-topbar-path a {
+    color: var(--vi-black) !important;
+  }
+
+  .vi3-topbar-path a:hover {
+    color: var(--vi-red) !important;
+  }
+
+  .vi3-topbar-separator {
+    color: var(--vi-yellow);
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .vi3-topbar-path strong {
+    overflow: hidden;
+    color: var(--vi-red);
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .vi3-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: 0 0 auto;
+  }
+
+  .vi3-topbar-secondary {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border: 1px solid var(--vi-line);
+    border-radius: 999px;
+    background: var(--vi-white);
+    color: var(--vi-black) !important;
+    font-size: 11px;
+    font-weight: 900;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .vi3-topbar-secondary:hover {
+    transform: translateY(-1px);
+    border-color: var(--vi-yellow);
+    background: var(--vi-yellow-soft);
+  }
+
+  .vi3-topbar-contact {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: var(--vi-yellow);
+    color: var(--vi-black) !important;
+    font-size: 11px;
+    font-weight: 900;
+    box-shadow: 0 9px 22px rgba(242, 160, 13, 0.2);
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .vi3-topbar-contact:hover {
+    transform: translateY(-1px);
+    background: var(--vi-yellow-hover);
+  }
+
+  /* =====================================================
+     HERO
+  ===================================================== */
+
+  .vi3-hero {
+    position: relative;
+    min-height: auto;
+    overflow: hidden;
+    background:
+      linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.99) 0%,
+        rgba(255, 255, 255, 0.97) 56%,
+        rgba(255, 248, 226, 0.94) 100%
+      );
+  }
+
+  .vi3-hero::before {
+    content: "";
+    position: absolute;
+    top: -260px;
+    right: -190px;
+    width: 630px;
+    height: 630px;
+    border: 2px solid rgba(242, 160, 13, 0.17);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 70px rgba(242, 160, 13, 0.035),
+      0 0 0 140px rgba(181, 31, 36, 0.018);
+  }
+
+  .vi3-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -260px;
+    left: -150px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: rgba(181, 31, 36, 0.055);
+  }
+
+  .vi3-hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 150px 0 105px;
+  }
+
+  .vi3-hero-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(370px, 0.8fr);
+    align-items: center;
+    gap: 62px;
+  }
+
+  .vi3-hero-copy {
+    position: relative;
+    z-index: 3;
+    min-width: 0;
+  }
+
+  .vi3-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border: 1px solid #eadfc9;
+    border-radius: 999px;
+    background: var(--vi-yellow-soft);
+    color: var(--vi-black);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .vi3-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--vi-red);
+    box-shadow: 0 0 0 5px rgba(181, 31, 36, 0.1);
+  }
+
+  .vi3-hero h1 {
+    position: relative;
+    z-index: 3;
+    max-width: 940px;
+    margin: 0;
+    padding: 0;
+    color: var(--vi-black);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(52px, 5.7vw, 91px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.052em;
+    overflow: visible;
+  }
+
+  .vi3-hero h1 em {
+    color: var(--vi-yellow);
+    font-style: normal;
+  }
+
+  .vi3-hero h1 span {
+    color: var(--vi-red);
+  }
+
+  .vi3-hero-description {
+    max-width: 760px;
+    margin: 27px 0 0;
+    color: var(--vi-gray);
+    font-size: clamp(17px, 1.35vw, 21px);
+    line-height: 1.68;
+  }
+
+  .vi3-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 31px;
+  }
+
+  /* =====================================================
+     PANOU HERO
+  ===================================================== */
+
+  .vi3-control-panel {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--vi-line);
+    border-radius: 29px;
+    background: var(--vi-white);
+    box-shadow: 0 28px 70px rgba(17, 17, 17, 0.1);
+  }
+
+  .vi3-control-panel::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -70px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: rgba(242, 160, 13, 0.13);
+  }
+
+  .vi3-panel-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 21px 23px;
+    border-bottom: 1px solid var(--vi-line);
+    background: var(--vi-yellow-soft);
+  }
+
+  .vi3-panel-code {
+    color: var(--vi-red);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .vi3-panel-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--vi-gray);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .vi3-panel-status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--vi-green);
+    box-shadow: 0 0 0 4px rgba(41, 168, 90, 0.11);
+  }
+
+  .vi3-panel-main {
+    position: relative;
+    z-index: 2;
+    padding: 31px 24px 25px;
+  }
+
+  .vi3-panel-main h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1.13;
+  }
+
+  .vi3-panel-main p {
+    margin: 12px 0 0;
+    color: var(--vi-gray);
+    font-size: 13px;
+    line-height: 1.63;
+  }
+
+  .vi3-panel-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 25px;
+    overflow: hidden;
+    border: 1px solid var(--vi-line);
+    border-radius: 18px;
+    background: var(--vi-cream);
+  }
+
+  .vi3-panel-stat {
+    min-width: 0;
+    padding: 19px 8px;
+    text-align: center;
+  }
+
+  .vi3-panel-stat + .vi3-panel-stat {
+    border-left: 1px solid var(--vi-line);
+  }
+
+  .vi3-panel-stat strong {
+    display: block;
+    color: var(--vi-black);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .vi3-panel-stat span {
+    display: block;
+    margin-top: 6px;
+    color: var(--vi-gray-light);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .vi3-panel-footer {
+    position: relative;
+    z-index: 2;
+    padding: 18px 22px;
+    background: var(--vi-red);
+    color: var(--vi-white);
+    font-size: 12px;
+    font-weight: 850;
+    line-height: 1.45;
+  }
+
+  /* =====================================================
+     MENIU RAPID
+  ===================================================== */
+
+  .vi3-quick-nav-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -29px;
+  }
+
+  .vi3-quick-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid var(--vi-line);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 22px 55px rgba(17, 17, 17, 0.1);
+    backdrop-filter: blur(16px);
+  }
+
+  .vi3-quick-nav a {
+    min-height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 13px;
+    border: 1px solid transparent;
+    border-radius: 17px;
+    color: var(--vi-black);
+    font-size: 12px;
+    font-weight: 850;
+    text-align: center;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .vi3-quick-nav a:hover {
+    transform: translateY(-2px);
+    border-color: var(--vi-yellow);
+    background: var(--vi-yellow-soft);
+  }
+
+  .vi3-quick-nav a:first-child {
+    background: var(--vi-yellow);
+  }
+
+  .vi3-quick-icon {
+    width: 27px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    border-radius: 9px;
+    background: var(--vi-black);
+    color: var(--vi-yellow);
+    font-size: 13px;
+  }
+
+  /* =====================================================
+     SECȚIUNEA SERVICII
+  ===================================================== */
+
+  .vi3-services {
+    padding: 105px 0 92px;
+    background:
+      radial-gradient(
+        circle at 97% 10%,
+        rgba(242, 160, 13, 0.08),
+        transparent 23%
+      ),
+      var(--vi-white);
+  }
+
+  .vi3-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(290px, 0.52fr);
+    align-items: end;
+    gap: 44px;
+    margin-bottom: 39px;
+  }
+
+  .vi3-kicker {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 14px;
+    color: var(--vi-red);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .vi3-kicker::before {
+    content: "";
+    width: 38px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--vi-yellow);
+  }
+
+  .vi3-heading h2 {
+    max-width: 910px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 4.7vw, 68px);
+    font-weight: 500;
+    line-height: 0.99;
+    letter-spacing: -0.045em;
+  }
+
+  .vi3-heading p {
+    margin: 0;
+    color: var(--vi-gray);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .vi3-category {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 50px 0 20px;
+    color: var(--vi-red);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    scroll-margin-top: 100px;
+  }
+
+  .vi3-category::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    flex: 0 0 auto;
+    border-radius: 3px;
+    background: var(--vi-yellow);
+  }
+
+  .vi3-category::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--vi-line),
+      transparent
+    );
+  }
+
+  .vi3-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  /* =====================================================
+     CARD SERVICIU
+  ===================================================== */
+
+  .vi3-card {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--vi-line);
+    border-radius: 28px;
+    background: var(--vi-white);
+    box-shadow: 0 13px 36px rgba(17, 17, 17, 0.055);
+    transition:
+      transform 0.27s ease,
+      border-color 0.27s ease,
+      box-shadow 0.27s ease;
+  }
+
+  .vi3-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(242, 160, 13, 0.55);
+    box-shadow: 0 26px 60px rgba(17, 17, 17, 0.12);
+  }
+
+  .vi3-card-visual {
+    position: relative;
+    min-height: 175px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 22px;
+    border-bottom: 1px solid var(--vi-line);
+    background: linear-gradient(
+      135deg,
+      var(--vi-yellow-soft),
+      var(--vi-white)
+    );
+  }
+
+  .vi3-card-visual.red {
+    background: linear-gradient(
+      135deg,
+      var(--vi-red-soft),
+      var(--vi-white)
+    );
+  }
+
+  .vi3-card-visual.mix {
+    background: linear-gradient(
+      135deg,
+      var(--vi-yellow-soft),
+      var(--vi-red-soft)
+    );
+  }
+
+  .vi3-card-visual::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    right: -65px;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(242, 160, 13, 0.19);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 35px rgba(242, 160, 13, 0.035),
+      0 0 0 70px rgba(181, 31, 36, 0.018);
+  }
+
+  .vi3-card-status {
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 11px;
+    border: 1px solid var(--vi-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--vi-black);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .vi3-card-status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--vi-green);
+    box-shadow: 0 0 0 4px rgba(41, 168, 90, 0.1);
+  }
+
+  .vi3-card-category {
+    position: absolute;
+    z-index: 3;
+    top: 19px;
+    right: 17px;
+    color: var(--vi-red);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .vi3-card-icon {
+    position: relative;
+    z-index: 2;
+    width: 72px;
+    height: 72px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 22px;
+    background: var(--vi-white);
+    color: var(--vi-yellow);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 33px;
+    box-shadow: 0 16px 32px rgba(17, 17, 17, 0.09);
+  }
+
+  .vi3-card-visual.red .vi3-card-icon {
+    color: var(--vi-red);
+  }
+
+  .vi3-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 22px 22px;
+  }
+
+  .vi3-card-code {
+    margin-bottom: 11px;
+    color: var(--vi-red);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .vi3-card h3 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 2vw, 34px);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+  }
+
+  .vi3-card-description {
+    margin: 14px 0 0;
+    color: var(--vi-gray);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .vi3-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 20px;
+  }
+
+  .vi3-tag {
+    padding: 8px 10px;
+    border: 1px solid var(--vi-line);
+    border-radius: 999px;
+    background: var(--vi-cream);
+    color: var(--vi-dark);
+    font-size: 9px;
+    font-weight: 800;
+  }
+
+  .vi3-card-footer {
+    margin-top: auto;
+    padding-top: 23px;
+  }
+
+  .vi3-card-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 50px;
+    gap: 9px;
+  }
+
+  .vi3-card-button {
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: var(--vi-black);
+    color: var(--vi-white) !important;
+    font-size: 11px;
+    font-weight: 900;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .vi3-card-button:hover {
+    transform: translateY(-2px);
+    background: var(--vi-red);
+  }
+
+  .vi3-card-arrow {
+    width: 27px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--vi-yellow);
+    color: var(--vi-black);
+    font-size: 15px;
+  }
+
+  .vi3-whatsapp {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25d366;
+    color: var(--vi-white) !important;
+    font-size: 16px;
+    font-weight: 900;
+    box-shadow: 0 11px 25px rgba(37, 211, 102, 0.15);
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .vi3-whatsapp:hover {
+    transform: translateY(-2px);
+    background: #1caf52;
+  }
+
+
+  /* =====================================================
+     CARD ADMINISTRARE – CTA-URI PROFESIONALE
+  ===================================================== */
+
+  .vi3-admin-icon {
+    padding: 17px;
+  }
+
+  .vi3-admin-icon svg {
+    width: 38px;
+    height: 38px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .vi3-admin-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .vi3-admin-action {
+    min-width: 0;
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .vi3-admin-action:hover {
+    transform: translateY(-2px);
+  }
+
+  .vi3-admin-action-main {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    padding-left: 19px;
+    background: var(--vi-black);
+    color: var(--vi-white) !important;
+    box-shadow: 0 12px 25px rgba(17, 17, 17, 0.13);
+  }
+
+  .vi3-admin-action-main:hover {
+    background: var(--vi-red);
+    box-shadow: 0 16px 30px rgba(181, 31, 36, 0.2);
+  }
+
+  .vi3-admin-action-secondary {
+    border-color: #d9d2c7;
+    background: var(--vi-white);
+    color: var(--vi-black) !important;
+  }
+
+  .vi3-admin-action-secondary:hover {
+    border-color: var(--vi-yellow);
+    background: var(--vi-yellow-soft);
+  }
+
+  .vi3-admin-action-whatsapp {
+    background: #25d366;
+    color: var(--vi-white) !important;
+    box-shadow: 0 11px 23px rgba(37, 211, 102, 0.18);
+  }
+
+  .vi3-admin-action-whatsapp:hover {
+    background: #1caf52;
+    box-shadow: 0 14px 27px rgba(37, 211, 102, 0.25);
+  }
+
+  .vi3-admin-action-whatsapp svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex: 0 0 auto;
+    fill: currentColor;
+  }
+
+  @media screen and (max-width: 480px) {
+    .vi3-admin-actions {
+      gap: 8px;
+    }
+
+    .vi3-admin-action {
+      min-height: 51px;
+      padding: 11px 10px;
+      font-size: 10px;
+    }
+
+    .vi3-admin-action-main {
+      padding-left: 16px;
+    }
+  }
+
+  /* =====================================================
+     CUM FUNCȚIONEAZĂ
+  ===================================================== */
+
+  .vi3-process {
+    position: relative;
+    overflow: hidden;
+    padding: 88px 0;
+    background: var(--vi-yellow-soft);
+    border-top: 1px solid #f0e2ba;
+    border-bottom: 1px solid #f0e2ba;
+  }
+
+  .vi3-process::before {
+    content: "";
+    position: absolute;
+    top: -230px;
+    right: -180px;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba(181, 31, 36, 0.08);
+    border-radius: 50%;
+  }
+
+  .vi3-process-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .vi3-process-card {
+    padding: 28px;
+    border: 1px solid #ecdfbd;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .vi3-process-number {
+    width: 51px;
+    height: 51px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 31px;
+    border-radius: 17px;
+    background: var(--vi-red);
+    color: var(--vi-white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    box-shadow: 0 13px 26px rgba(181, 31, 36, 0.16);
+  }
+
+  .vi3-process-card:nth-child(2) .vi3-process-number {
+    background: var(--vi-yellow);
+    color: var(--vi-black);
+  }
+
+  .vi3-process-card h3 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 500;
+  }
+
+  .vi3-process-card p {
+    margin: 11px 0 0;
+    color: var(--vi-gray);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* =====================================================
+     CONTACT
+  ===================================================== */
+
+  .vi3-contact {
+    position: relative;
+    overflow: hidden;
+    padding: 91px 0;
+    background: linear-gradient(
+      115deg,
+      var(--vi-red) 0%,
+      #951a1f 64%,
+      var(--vi-black) 100%
+    );
+    color: var(--vi-white);
+    scroll-margin-top: 90px;
+  }
+
+  .vi3-contact::before {
+    content: "";
+    position: absolute;
+    top: -220px;
+    right: -130px;
+    width: 520px;
+    height: 520px;
+    border: 2px solid rgba(242, 160, 13, 0.22);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 70px rgba(242, 160, 13, 0.035),
+      0 0 0 140px rgba(255, 255, 255, 0.015);
+  }
+
+  .vi3-contact-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.75fr);
+    align-items: center;
+    gap: 58px;
+  }
+
+  .vi3-contact-kicker {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 15px;
+    color: var(--vi-yellow);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .vi3-contact-kicker::before {
+    content: "";
+    width: 38px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--vi-white);
+  }
+
+  .vi3-contact h2 {
+    max-width: 880px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 4.9vw, 70px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.046em;
+  }
+
+  .vi3-contact p {
+    max-width: 720px;
+    margin: 20px 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .vi3-contact-panel {
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 26px 65px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px);
+  }
+
+  .vi3-contact-panel .vi3-button {
+    width: 100%;
+  }
+
+  .vi3-contact-links {
+    display: grid;
+    gap: 9px;
+    margin-top: 11px;
+  }
+
+  .vi3-contact-link {
+    min-height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 19px;
+    background: rgba(255, 255, 255, 0.06);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .vi3-contact-link:hover {
+    border-color: var(--vi-yellow);
+    background: rgba(255, 255, 255, 0.11);
+  }
+
+  .vi3-contact-link span {
+    display: block;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .vi3-contact-link strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--vi-white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .vi3-contact-link b {
+    color: var(--vi-yellow);
+    font-size: 18px;
+  }
+
+  /* =====================================================
+     TABLETĂ
+  ===================================================== */
+
+  @media (max-width: 1120px) {
+    .vi3-shell {
+      width: min(100% - 34px, 1060px);
+    }
+
+    .vi3-hero-inner {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .vi3-hero-grid,
+    .vi3-heading,
+    .vi3-contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vi3-hero-grid {
+      gap: 45px;
+    }
+
+    .vi3-control-panel {
+      max-width: 650px;
+    }
+
+    .vi3-quick-nav {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .vi3-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vi3-heading p {
+      max-width: 720px;
+    }
+
+    .vi3-contact-panel {
+      max-width: 590px;
+    }
+  }
+
+  @media (max-width: 790px) {
+    .vi3-quick-nav {
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 10px;
+      border-radius: 22px;
+      scrollbar-width: none;
+    }
+
+    .vi3-quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .vi3-quick-nav a {
+      min-width: 155px;
+      flex: 0 0 auto;
+    }
+
+    .vi3-process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* =====================================================
+     TELEFON – CORECȚIE COMPLETĂ
+  ===================================================== */
+
+  @media screen and (max-width: 700px) {
+    /*
+      Bara personalizată este ascunsă.
+      Pe telefon rămâne doar meniul principal Squarespace.
+    */
+
+    #vi-services-complete .vi3-topbar {
+      display: none !important;
+      position: static !important;
+      width: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .vi3-shell {
+      width: min(100% - 26px, 680px);
+    }
+
+    /*
+      Spațiu pentru meniul Squarespace care poate fi fixat peste pagină.
+    */
+
+    .vi3-hero {
+      position: relative !important;
+      display: block !important;
+      min-height: auto !important;
+      margin: 0 !important;
+      padding-top: 96px !important;
+      overflow: hidden !important;
+    }
+
+    .vi3-hero-inner {
+      position: relative !important;
+      z-index: 3 !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding-top: 46px !important;
+      padding-bottom: 72px !important;
+    }
+
+    .vi3-hero-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      align-items: start !important;
+      gap: 40px !important;
+      width: 100% !important;
+    }
+
+    .vi3-hero-copy {
+      position: relative !important;
+      z-index: 5 !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+    }
+
+    .vi3-badge {
+      position: relative !important;
+      z-index: 6 !important;
+      margin: 0 0 18px !important;
+    }
+
+    .vi3-hero h1 {
+      position: relative !important;
+      z-index: 6 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: clamp(42px, 12.5vw, 61px) !important;
+      line-height: 1.02 !important;
+      letter-spacing: -0.043em !important;
+      overflow: visible !important;
+      white-space: normal !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .vi3-hero-description {
+      position: relative !important;
+      z-index: 6 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-top: 22px !important;
+      font-size: 16px !important;
+      line-height: 1.65 !important;
+    }
+
+    .vi3-hero-actions {
+      position: relative !important;
+      z-index: 6 !important;
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      margin-top: 27px !important;
+    }
+
+    .vi3-hero-actions .vi3-button {
+      width: 100% !important;
+    }
+
+    .vi3-control-panel {
+      position: relative !important;
+      z-index: 4 !important;
+      top: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      transform: none !important;
+    }
+
+    .vi3-panel-top {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .vi3-panel-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .vi3-panel-stat + .vi3-panel-stat {
+      border-top: 1px solid var(--vi-line);
+      border-left: 0;
+    }
+
+    .vi3-panel-stat {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      text-align: left;
+    }
+
+    .vi3-panel-stat span {
+      margin-top: 0;
+      text-align: right;
+    }
+
+    .vi3-quick-nav-section {
+      margin-top: -22px;
+    }
+
+    .vi3-services {
+      padding: 86px 0 66px;
+    }
+
+    .vi3-card-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .vi3-heading {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .vi3-heading h2 {
+      font-size: clamp(37px, 10vw, 52px);
+      line-height: 1;
+    }
+
+    .vi3-category {
+      margin-top: 42px;
+      scroll-margin-top: 115px;
+    }
+
+    .vi3-process,
+    .vi3-contact {
+      padding: 65px 0;
+    }
+
+    .vi3-contact h2 {
+      font-size: clamp(38px, 10.5vw, 54px);
+      line-height: 1;
+    }
+
+    .vi3-contact-panel {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #vi-services-complete #vi-servicii,
+    #vi-services-complete #vi-curatenie,
+    #vi-services-complete #vi-reparatii,
+    #vi-services-complete #vi-administrare,
+    #vi-services-complete #vi-contact {
+      scroll-margin-top: 115px !important;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .vi3-hero {
+      padding-top: 88px !important;
+    }
+
+    .vi3-hero-inner {
+      padding-top: 38px !important;
+      padding-bottom: 62px !important;
+    }
+
+    .vi3-hero h1 {
+      font-size: clamp(39px, 11.8vw, 53px) !important;
+      line-height: 1.035 !important;
+      letter-spacing: -0.038em !important;
+    }
+
+    .vi3-badge {
+      padding: 9px 12px;
+      font-size: 9px;
+    }
+
+    .vi3-card-actions {
+      grid-template-columns: minmax(0, 1fr) 48px;
+    }
+
+    .vi3-whatsapp {
+      width: 48px;
+      height: 48px;
+    }
+
+    .vi3-card-button {
+      min-height: 48px;
+      padding-right: 12px;
+      padding-left: 14px;
+      font-size: 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    #vi-services-complete *,
+    #vi-services-complete *::before,
+    #vi-services-complete *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<main id="vi-services-complete">
+
+  <a class="vi3-skip-link" href="#vi-servicii">
+    Mergi direct la servicii
+  </a>
+
+  <!-- ===================================================
+       BARĂ ACASĂ / SERVICII
+       Ascunsă automat pe telefon
+  ==================================================== -->
+
+  <nav class="vi3-topbar" aria-label="Navigare principală">
+    <div class="vi3-shell vi3-topbar-inner">
+
+      <div class="vi3-topbar-left">
+
+        <a
+          class="vi3-topbar-logo"
+          href="/"
+          aria-label="Victoria Imob - Acasă"
+        >
+          VI
+        </a>
+
+        <div class="vi3-topbar-path">
+          <a href="/">Acasă</a>
+
+          <span class="vi3-topbar-separator">/</span>
+
+          <strong>Servicii</strong>
+        </div>
+
+      </div>
+
+      <div class="vi3-topbar-actions">
+
+        <a
+          class="vi3-topbar-secondary"
+          href="#vi-servicii"
+        >
+          Vezi serviciile
+          <span aria-hidden="true">↓</span>
+        </a>
+
+        <a
+          class="vi3-topbar-contact"
+          href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20mai%20multe%20informa%C8%9Bii%20despre%20serviciile%20Victoria%20Imob."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact rapid
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================================================
+       HERO
+  ==================================================== -->
+
+  <section class="vi3-hero">
+    <div class="vi3-shell vi3-hero-inner">
+
+      <div class="vi3-hero-grid">
+
+        <div class="vi3-hero-copy">
+
+          <div class="vi3-badge">
+            <span class="vi3-badge-dot"></span>
+            Victoria Imob+
+          </div>
+
+          <h1>
+            Servicii <em>simple</em> pentru o proprietate
+            <span>fără griji.</span>
+          </h1>
+
+          <p class="vi3-hero-description">
+            Administrare, listare și închiriere de proprietăți, completate
+            de servicii de curățenie și reparații, organizate clar într-un
+            singur loc de echipa Victoria Imob.
+          </p>
+
+          <div class="vi3-hero-actions">
+
+            <a
+              class="vi3-button vi3-button-yellow"
+              href="#vi-servicii"
+            >
+              Vezi toate serviciile
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <a
+              class="vi3-button vi3-button-outline"
+              href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20am%20nevoie%20de%20ajutor%20pentru%20alegerea%20unui%20serviciu%20Victoria%20Imob."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ajutor pe WhatsApp
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </div>
+        </div>
+
+        <aside class="vi3-control-panel">
+
+          <div class="vi3-panel-top">
+
+            <span class="vi3-panel-code">
+              Victoria Imob / Servicii
+            </span>
+
+            <span class="vi3-panel-status">
+              Disponibil
+            </span>
+
+          </div>
+
+          <div class="vi3-panel-main">
+
+            <h2>
+              Tot ce are nevoie proprietatea ta
+            </h2>
+
+            <p>
+              Servicii pentru proprietari, chiriași și locuințe,
+              gestionate printr-un singur punct de contact.
+            </p>
+
+            <div class="vi3-panel-stats">
+
+              <div class="vi3-panel-stat">
+                <strong>6</strong>
+                <span>
+                  Servicii<br>
+                  principale
+                </span>
+              </div>
+
+              <div class="vi3-panel-stat">
+                <strong>1</strong>
+                <span>
+                  Echipă<br>
+                  locală
+                </span>
+              </div>
+
+              <div class="vi3-panel-stat">
+                <strong>360°</strong>
+                <span>
+                  Suport pentru<br>
+                  proprietate
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="vi3-panel-footer">
+            Solicitările sunt confirmate direct de echipa Victoria Imob.
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       MENIU RAPID
+  ==================================================== -->
+
+  <section class="vi3-quick-nav-section">
+    <div class="vi3-shell">
+
+      <nav class="vi3-quick-nav" aria-label="Categorii servicii">
+
+        <a href="#vi-servicii">
+          <span class="vi3-quick-icon">＋</span>
+          Toate serviciile
+        </a>
+
+        <a href="#vi-administrare">
+          <span class="vi3-quick-icon">⌂</span>
+          Proprietăți
+        </a>
+
+        <a href="#vi-curatenie">
+          <span class="vi3-quick-icon">✦</span>
+          Curățenie
+        </a>
+
+        <a href="#vi-reparatii">
+          <span class="vi3-quick-icon">⚒</span>
+          Reparații
+        </a>
+
+        <a href="#vi-contact">
+          <span class="vi3-quick-icon">→</span>
+          Contact
+        </a>
+
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SERVICII
+  ==================================================== -->
+
+  <section class="vi3-services" id="vi-servicii">
+    <div class="vi3-shell">
+
+      <header class="vi3-heading">
+
+        <div>
+          <div class="vi3-kicker">
+            Servicii Victoria Imob+
+          </div>
+
+          <h2>
+            Alege rapid serviciul potrivit.
+          </h2>
+        </div>
+
+        <p>
+          Fiecare serviciu are o descriere clară și două variante de acces:
+          pagina serviciului sau solicitare directă prin WhatsApp.
+        </p>
+
+      </header>
+
+      <!-- ADMINISTRARE ȘI IMOBILIARE -->
+
+      <div class="vi3-category" id="vi-administrare">
+        Proprietăți, administrare și servicii imobiliare
+      </div>
+
+      <div class="vi3-card-grid">
+
+        <!-- ADMINISTRARE -->
+
+        <article class="vi3-card">
+
+          <div class="vi3-card-visual red">
+
+            <span class="vi3-card-status">
+              Disponibil
+            </span>
+
+            <span class="vi3-card-category">
+              Administrare
+            </span>
+
+            <span class="vi3-card-icon vi3-admin-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" focusable="false">
+                <path d="M6 22 24 7l18 15"></path>
+                <path d="M10 20v21h28V20"></path>
+                <path d="M19 41V28h10v13"></path>
+                <path d="M15 25h5"></path>
+                <path d="M28 25h5"></path>
+              </svg>
+            </span>
+
+          </div>
+
+          <div class="vi3-card-content">
+
+            <div class="vi3-card-code">
+              Serviciul 01
+            </div>
+
+            <h3>
+              Administrare proprietăți
+            </h3>
+
+            <p class="vi3-card-description">
+              Gestionăm chiria, comunicarea cu chiriașii, notificările,
+              verificările și coordonarea problemelor proprietății.
+            </p>
+
+            <div class="vi3-tags">
+              <span class="vi3-tag">Chirii</span>
+              <span class="vi3-tag">Facturi</span>
+              <span class="vi3-tag">Suport proprietar</span>
+            </div>
+
+            <div class="vi3-card-footer">
+
+              <div class="vi3-admin-actions">
+
+                <a
+                  class="vi3-admin-action vi3-admin-action-main"
+                  href="https://www.victoriaimob.com/pachete-administrative"
+                >
+                  <span>Vezi pachetele administrative</span>
+                  <span class="vi3-card-arrow" aria-hidden="true">→</span>
+                </a>
+
+                <a
+                  class="vi3-admin-action vi3-admin-action-secondary"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20mai%20multe%20informa%C8%9Bii%20despre%20administrarea%20unei%20propriet%C4%83%C8%9Bi."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cere detalii
+                </a>
+
+                <a
+                  class="vi3-admin-action vi3-admin-action-whatsapp"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20mai%20multe%20informa%C8%9Bii%20despre%20administrarea%20unei%20propriet%C4%83%C8%9Bi."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Discută pe WhatsApp despre administrarea proprietății"
+                >
+                  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                    <path d="M19.11 17.44c-.17-.09-1.02-.5-1.18-.56-.16-.06-.27-.09-.39.09-.11.17-.44.56-.54.67-.1.11-.2.13-.37.04-.17-.09-.72-.27-1.38-.85-.51-.45-.85-1.01-.95-1.18-.1-.17-.01-.27.08-.35.08-.08.17-.2.26-.3.09-.1.11-.17.17-.29.06-.11.03-.22-.01-.3-.04-.09-.39-.94-.53-1.29-.14-.34-.28-.29-.39-.3h-.33c-.11 0-.3.04-.46.22-.16.17-.6.59-.6 1.44s.62 1.67.7 1.79c.09.11 1.22 1.86 2.95 2.61.41.18.73.28.98.36.41.13.79.11 1.08.07.33-.05 1.02-.42 1.16-.82.14-.4.14-.74.1-.82-.04-.07-.15-.11-.32-.2Z"></path>
+                    <path d="M16.02 3.2A12.7 12.7 0 0 0 5.1 22.39L3.2 28.8l6.58-1.73A12.8 12.8 0 1 0 16.02 3.2Zm0 23.25c-2.01 0-3.98-.54-5.7-1.56l-.41-.24-3.9 1.02 1.04-3.8-.27-.42a10.48 10.48 0 1 1 9.24 5Z"></path>
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+
+        <!-- LISTAREA PROPRIETĂȚII -->
+
+        <article class="vi3-card">
+
+          <div class="vi3-card-visual mix">
+
+            <span class="vi3-card-status">
+              Disponibil
+            </span>
+
+            <span class="vi3-card-category">
+              Vânzare
+            </span>
+
+            <span class="vi3-card-icon">
+              ＋
+            </span>
+
+          </div>
+
+          <div class="vi3-card-content">
+
+            <div class="vi3-card-code">
+              Serviciul 02
+            </div>
+
+            <h3>
+              Listarea proprietății
+            </h3>
+
+            <p class="vi3-card-description">
+              Fotografii, prezentare profesionistă, promovare, gestionarea
+              solicitărilor și organizarea vizionărilor.
+            </p>
+
+            <div class="vi3-tags">
+              <span class="vi3-tag">Evaluare</span>
+              <span class="vi3-tag">Promovare</span>
+              <span class="vi3-tag">Vizionări</span>
+            </div>
+
+            <div class="vi3-card-footer">
+              <div class="vi3-card-actions">
+
+                <a
+                  class="vi3-card-button"
+                  href="/listeaza-proprietatea"
+                >
+                  Listează proprietatea
+                  <span class="vi3-card-arrow">→</span>
+                </a>
+
+                <a
+                  class="vi3-whatsapp"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20s%C4%83%20listez%20o%20proprietate%20prin%20Victoria%20Imob."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Listare proprietate pe WhatsApp"
+                >
+                  W
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ÎNCHIRIEREA PROPRIETĂȚII -->
+
+        <article class="vi3-card">
+
+          <div class="vi3-card-visual">
+
+            <span class="vi3-card-status">
+              Disponibil
+            </span>
+
+            <span class="vi3-card-category">
+              Închiriere
+            </span>
+
+            <span class="vi3-card-icon">
+              ⌁
+            </span>
+
+          </div>
+
+          <div class="vi3-card-content">
+
+            <div class="vi3-card-code">
+              Serviciul 03
+            </div>
+
+            <h3>
+              Închirierea proprietății
+            </h3>
+
+            <p class="vi3-card-description">
+              Promovarea proprietății, selecția chiriașului, vizionări și
+              pregătirea documentelor necesare închirierii.
+            </p>
+
+            <div class="vi3-tags">
+              <span class="vi3-tag">Promovare</span>
+              <span class="vi3-tag">Selecție chiriași</span>
+              <span class="vi3-tag">Contracte</span>
+            </div>
+
+            <div class="vi3-card-footer">
+              <div class="vi3-card-actions">
+
+                <a
+                  class="vi3-card-button"
+                  href="/proprietai-de-nchiriat"
+                >
+                  Vezi detaliile
+                  <span class="vi3-card-arrow">→</span>
+                </a>
+
+                <a
+                  class="vi3-whatsapp"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20s%C4%83%20%C3%AEnchiriez%20o%20proprietate%20prin%20Victoria%20Imob."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Închiriere proprietate pe WhatsApp"
+                >
+                  W
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+      <!-- CURĂȚENIE ȘI REPARAȚII -->
+
+      <div class="vi3-category" id="vi-curatenie">
+        Curățenie și intervenții pentru locuință
+      </div>
+
+      <div class="vi3-card-grid">
+
+        <!-- CURĂȚENIE DE ÎNTREȚINERE -->
+
+        <article class="vi3-card">
+
+          <div class="vi3-card-visual">
+
+            <span class="vi3-card-status">
+              Disponibil
+            </span>
+
+            <span class="vi3-card-category">
+              Curățenie
+            </span>
+
+            <span class="vi3-card-icon">
+              ✦
+            </span>
+
+          </div>
+
+          <div class="vi3-card-content">
+
+            <div class="vi3-card-code">
+              Serviciul 04
+            </div>
+
+            <h3>
+              Curățenie de întreținere
+            </h3>
+
+            <p class="vi3-card-description">
+              Curățenie periodică pentru apartamente și garsoniere
+              întreținute în condiții normale.
+            </p>
+
+            <div class="vi3-tags">
+              <span class="vi3-tag">Aspirare</span>
+              <span class="vi3-tag">Ștergere praf</span>
+              <span class="vi3-tag">Baie și bucătărie</span>
+            </div>
+
+            <div class="vi3-card-footer">
+              <div class="vi3-card-actions">
+
+                <a
+                  class="vi3-card-button"
+                  href="/curatenie-de-intreinere"
+                >
+                  Comandă serviciul
+                  <span class="vi3-card-arrow">→</span>
+                </a>
+
+                <a
+                  class="vi3-whatsapp"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20s%C4%83%20comand%20serviciul%20de%20cur%C4%83%C8%9Benie%20de%20%C3%AEntre%C8%9Binere."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Curățenie de întreținere pe WhatsApp"
+                >
+                  W
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- CURĂȚENIE GENERALĂ -->
+
+        <article class="vi3-card">
+
+          <div class="vi3-card-visual mix">
+
+            <span class="vi3-card-status">
+              Disponibil
+            </span>
+
+            <span class="vi3-card-category">
+              Curățenie
+            </span>
+
+            <span class="vi3-card-icon">
+              ◇
+            </span>
+
+          </div>
+
+          <div class="vi3-card-content">
+
+            <div class="vi3-card-code">
+              Serviciul 05
+            </div>
+
+            <h3>
+              Curățenie generală
+            </h3>
+
+            <p class="vi3-card-description">
+              Curățare aprofundată pentru apartamente și case, înainte sau
+              după mutare ori pentru reîmprospătarea completă a locuinței.
+            </p>
+
+            <div class="vi3-tags">
+              <span class="vi3-tag">Igienizare</span>
+              <span class="vi3-tag">Curățare completă</span>
+              <span class="vi3-tag">Apartamente și case</span>
+            </div>
+
+            <div class="vi3-card-footer">
+              <div class="vi3-card-actions">
+
+                <a
+                  class="vi3-card-button"
+                  href="/curatenie-generala"
+                >
+                  Vezi serviciul
+                  <span class="vi3-card-arrow" aria-hidden="true">→</span>
+                </a>
+
+                <a
+                  class="vi3-whatsapp"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20doresc%20o%20ofert%C4%83%20pentru%20cur%C4%83%C8%9Benie%20general%C4%83."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Curățenie generală pe WhatsApp"
+                >
+                  W
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- REPARAȚII MICI -->
+
+        <article class="vi3-card" id="vi-reparatii">
+
+          <div class="vi3-card-visual red">
+
+            <span class="vi3-card-status">
+              Disponibil
+            </span>
+
+            <span class="vi3-card-category">
+              Reparații
+            </span>
+
+            <span class="vi3-card-icon">
+              ⚒
+            </span>
+
+          </div>
+
+          <div class="vi3-card-content">
+
+            <div class="vi3-card-code">
+              Serviciul 06
+            </div>
+
+            <h3>
+              Reparații mici
+            </h3>
+
+            <p class="vi3-card-description">
+              Montaj, prize, robinete, corpuri de iluminat, mobilier, uși
+              și alte intervenții minore din locuință.
+            </p>
+
+            <div class="vi3-tags">
+              <span class="vi3-tag">Evaluare foto</span>
+              <span class="vi3-tag">Programare</span>
+              <span class="vi3-tag">Intervenții rapide</span>
+            </div>
+
+            <div class="vi3-card-footer">
+              <div class="vi3-card-actions">
+
+                <a
+                  class="vi3-card-button"
+                  href="/reparatii-mici"
+                >
+                  Solicită evaluarea
+                  <span class="vi3-card-arrow">→</span>
+                </a>
+
+                <a
+                  class="vi3-whatsapp"
+                  href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20am%20nevoie%20de%20o%20repara%C8%9Bie%20mic%C4%83.%20V%C4%83%20pot%20trimite%20fotografii%20pentru%20evaluare."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Reparații mici pe WhatsApp"
+                >
+                  W
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       CUM FUNCȚIONEAZĂ
+  ==================================================== -->
+
+  <section class="vi3-process">
+    <div class="vi3-shell">
+
+      <header class="vi3-heading">
+
+        <div>
+          <div class="vi3-kicker">
+            Cum funcționează
+          </div>
+
+          <h2>
+            Trei pași simpli.
+          </h2>
+        </div>
+
+        <p>
+          Procesul este organizat clar, fără deplasări inutile înainte
+          de confirmarea serviciului.
+        </p>
+
+      </header>
+
+      <div class="vi3-process-grid">
+
+        <article class="vi3-process-card">
+
+          <span class="vi3-process-number">
+            01
+          </span>
+
+          <h3>
+            Alegi serviciul
+          </h3>
+
+          <p>
+            Deschizi pagina serviciului sau ne trimiți solicitarea
+            direct prin WhatsApp.
+          </p>
+
+        </article>
+
+        <article class="vi3-process-card">
+
+          <span class="vi3-process-number">
+            02
+          </span>
+
+          <h3>
+            Confirmăm detaliile
+          </h3>
+
+          <p>
+            Stabilim tipul proprietății, volumul lucrării, costul
+            și disponibilitatea.
+          </p>
+
+        </article>
+
+        <article class="vi3-process-card">
+
+          <span class="vi3-process-number">
+            03
+          </span>
+
+          <h3>
+            Realizăm serviciul
+          </h3>
+
+          <p>
+            Echipa se prezintă la data stabilită sau începe gestionarea
+            serviciului solicitat.
+          </p>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       CONTACT
+  ==================================================== -->
+
+  <section class="vi3-contact" id="vi-contact">
+    <div class="vi3-shell vi3-contact-grid">
+
+      <div>
+
+        <div class="vi3-contact-kicker">
+          Contact direct
+        </div>
+
+        <h2>
+          Nu știi ce serviciu să alegi?
+        </h2>
+
+        <p>
+          Trimite-ne câteva detalii despre proprietate și îți recomandăm
+          serviciul potrivit, costurile orientative și următorii pași.
+        </p>
+
+      </div>
+
+      <aside class="vi3-contact-panel">
+
+        <a
+          class="vi3-button vi3-button-yellow"
+          href="https://wa.me/40757551162?text=Bun%C4%83%20ziua%2C%20am%20nevoie%20de%20un%20serviciu%20pentru%20proprietatea%20mea%20%C8%99i%20doresc%20mai%20multe%20detalii."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Trimite detaliile pe WhatsApp
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <div class="vi3-contact-links">
+
+          <a
+            class="vi3-contact-link"
+            href="tel:+40757551162"
+          >
+            <div>
+              <span>Telefon direct</span>
+              <strong>0757 551 162</strong>
+            </div>
+
+            <b>→</b>
+          </a>
+
+          <a
+            class="vi3-contact-link"
+            href="https://wa.me/40757551162"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div>
+              <span>Mesaj rapid</span>
+              <strong>WhatsApp Victoria Imob</strong>
+            </div>
+
+            <b>→</b>
+          </a>
+
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+</main>
